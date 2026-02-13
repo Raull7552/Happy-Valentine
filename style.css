@@ -1,0 +1,410 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* EXTRA SMALL PHONE (≤360px) */
+@media (max-width: 360px) {
+
+  .judul h1 {
+    font-size: 20px;
+  }
+
+  .judul p {
+    font-size: 11px;
+  }
+
+  .item {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .item.right {
+    margin-left: 0;
+  }
+
+  .line {
+    left: 20px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* SMALL - NORMAL PHONE (≤480px) */
+@media (max-width: 480px) {
+
+  .judul h1 {
+    font-size: 24px;
+  }
+
+  .item {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .item.right {
+    margin-left: 0;
+  }
+
+  .line {
+    left: 25px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* TABLET (≤768px) */
+@media (max-width: 768px) {
+
+  .timeline {
+    width: 95%;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+/* SMALL LAPTOP (≤1024px) */
+@media (max-width: 1024px) {
+
+  .timeline {
+    width: 90%;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #fff5f7, #ffe3ec);
+  color: #6b4f4f;
+  
+}
+
+/* ================= POPUP ================= */
+
+.popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 240, 245, 0.95);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+
+.popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(214, 51, 108, 0.2);
+}
+
+.popup-box h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #d6336c;
+}
+
+.popup-box p {
+  font-size: 14px;
+  margin: 10px 0 20px;
+  color: #8a4f4f;
+}
+
+.popup-box button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.popup-box button:hover {
+  background: #e03154;
+  transform: scale(1.05);
+}
+
+/* ================= SECTION JUDUL ================= */
+
+.judul {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  padding: 20px;
+}
+
+.judul h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #d6336c;
+}
+
+.judul h1::after {
+  content: " ❤";
+}
+
+.judul p {
+  max-width: 500px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #8a4f4f;
+}
+
+/* ================= TIMELINE ================= */
+
+.judul-timeline h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d6336c;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff8fab, #d6336c);
+  border-radius: 10px;
+}
+
+.item {
+  width: 50%;
+  padding: 20px;
+}
+
+.item.left {
+  text-align: right;
+}
+
+.item.right {
+  margin-left: 50%;
+  text-align: left;
+}
+
+
+.card {
+  display: inline-block;
+  position: relative;
+  background: white;
+  padding: 18px 22px;
+  border-radius: 20px;
+  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(214, 51, 108, 0.15);
+  transition: 0.3s ease;
+}
+
+.item.left .card ::after{
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+}
+
+.item.item.right .card ::after{
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  color: #d6336c;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ================= LETTER IMAGE ================= */
+.letter{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.letter img {
+  width: 90vw;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(214, 51, 108, 0.2);
+}
+
+/* ================= FORM ================= */
+
+.content{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(214, 51, 108, 0.2);
+}
+
+.contact-container h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #d6336c;
+  margin-bottom: 15px;
+}
+
+.input-box textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #ffd6e0;
+  background: #fff5f7;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-box textarea:focus {
+  border-color: #ff4d6d;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #e03154;
+  transform: scale(1.05);
+}
+
+/* ================= STATUS MESSAGE ================= */
+
+.status-msg.success {
+  background: #ff4d6d;
+}
+
+/* ================= PHOTO GRID ================= */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.photo-grid img,
+.photo-grid video {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(214, 51, 108, 0.15);
+}
+
+.photo-note {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #d6336c;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.photos-container h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+[data-aos]{
+  transition-property: transform, opacity !important;
+}
